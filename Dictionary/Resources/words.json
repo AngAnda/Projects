@@ -1,0 +1,56 @@
+[
+  {
+    "Name": "Koala",
+    "Category": "Animals",
+    "Description": "It lives in trees and is from Australia.",
+    "ImagePath": "../../Resources/Koala.jpg"
+  },
+  {
+    "Name": "Leopard",
+    "Category": "Animals",
+    "Description": "Fast animal from Africa. Will eat you :))",
+    "ImagePath": "../../Resources/leopard.jpg"
+  },
+  {
+    "Name": "Giraffe",
+    "Category": "Animals",
+    "Description": "Found in Africa, this creature has a long neck",
+    "ImagePath": "../../Resources/Giraffe.png"
+  },
+  {
+    "Name": "Panda",
+    "Category": "Animals",
+    "Description": "It munches on bamboo and resembles a bear.",
+    "ImagePath": "../../Resources/NoImage.jpg"
+  },
+  {
+    "Name": "Kangoroo",
+    "Category": "Animals",
+    "Description": "A large marsupial mammal native to Australia, known for its powerful hind legs used for hopping and its pouch for carrying young joeys.",
+    "ImagePath": "../../Resources/NoImage.jpg"
+  },
+  {
+    "Name": "Student",
+    "Category": "Education",
+    "Description": "Sleep deprived being. ",
+    "ImagePath": "../../Resources/sloth.jpg"
+  },
+  {
+    "Name": "Capybara",
+    "Category": "Animals",
+    "Description": "Living near water bodies, it is well-adapted for aquatic environments.",
+    "ImagePath": "../../Resources/capybara.jpg"
+  },
+  {
+    "Name": "Red Panda",
+    "Category": "Animals",
+    "Description": "This animal is a small mammal native to the eastern Himalayas and southwestern China. It has a reddish-brown color, a long, shaggy tail, and a waddling gait due to its shorter front legs. It is slightly larger than a domestic cat. Although it shares the name with the more famous black and white bear, they are not closely related. This creature is primarily nocturnal and is a solitary animal, mainly feeding on bamboo, but also eats eggs, birds, and insects. It is known for its climbing ability and spends most of its life in trees. ",
+    "ImagePath": "../../Resources/redpanda.jpg"
+  },
+  {
+    "Name": "Lion",
+    "Category": "Animals",
+    "Description": "Lives in Africa. Has a beautiful mane.",
+    "ImagePath": "../../Resources/NoImage.jpg"
+  }
+]

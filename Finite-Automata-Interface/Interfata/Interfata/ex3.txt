@@ -1,0 +1,10 @@
+States: q0 q1 q2 q3 q4 
+Alphabet: * a b 
+Transitions:
+[q0 , *] = q4 
+[q0 , a] = q1 
+[q1 , b] = q2 
+[q2 , *] = q3 
+[q4 , *] = q4 
+Start state: q0
+Final states: q4 q3 

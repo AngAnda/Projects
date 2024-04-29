@@ -1,0 +1,127 @@
+﻿<Page x:Class="Dicitionary.Views.UserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:vm="clr-namespace:Dicitionary.ViewModels"
+      xmlns:local="clr-namespace:Dictionary.Converters"
+      mc:Ignorable="d" 
+      d:Height="675" d:Width="1295"
+      Title="UserPage">
+
+    <Page.Resources>
+        <local:StringToImageConverter x:Key="StringToImageConverter"/>
+    </Page.Resources>
+
+    <Page.DataContext>
+        <vm:UserPageViewModel/>
+    </Page.DataContext>
+
+    <Page.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="LightBlue" Offset="0.0" />
+            <GradientStop Color="White" Offset="1.0" />
+        </LinearGradientBrush>
+    </Page.Background>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*" />
+            <RowDefinition Height="90*" />
+            <RowDefinition Height="145*"/>
+            <RowDefinition Height="209*"/>
+            <RowDefinition Height="131*" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="1" 
+               Content="Dictionary" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Center" 
+               FontSize="35" 
+               Grid.ColumnSpan="2" Height="56" Width="166"/>
+
+        <Label 
+            Content="Word:  " 
+            Grid.Column="1" 
+            Grid.Row="1" 
+            VerticalAlignment="Top" 
+            Height="26"/>
+
+        <ComboBox 
+            Name="ComboBoxWords"
+            Grid.Row="1" 
+            Grid.Column="1" 
+            Height="26" 
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Left" 
+            Width="250" 
+            ItemsSource="{Binding FilteredWords}" 
+            Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+            DisplayMemberPath="Name"
+            IsEditable="True"
+            Loaded="ComboBox_Loaded"
+            />
+
+        <Label 
+            Content="Category: "
+            Grid.Column="2"
+            Grid.Row="1"
+            VerticalAlignment="Top"
+            Height="25"/>
+
+        <ComboBox 
+            Name="ComboBox" 
+            Grid.Row="1" 
+            Grid.Column="2" 
+            Height="20" 
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Left" 
+            Width="250"  
+            ItemsSource="{Binding Categories}"
+            SelectedValue="{Binding Category, Mode=TwoWay}"
+           />
+
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <Label  
+                Content="{Binding CurrentWord.Name}" 
+                FontSize="25" 
+                VerticalAlignment="Top" 
+                Height="50" Margin="0,10, 0, 0" Grid.RowSpan="2"/>
+            <Label
+                Content="{Binding CurrentWord.Category}"
+                FontSize="15"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Height="40"
+                Width="Auto"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="3"
+               Grid.Column="1"
+               Text="{Binding CurrentWord.Description}"
+               FontSize="14"
+               VerticalAlignment="Top"
+               Margin="0,20"
+               Grid.ColumnSpan="2"
+               Height="Auto"
+               Width="500"
+               TextWrapping="Wrap"
+               HorizontalAlignment="Left"/>
+
+        <Image Grid.Row="2"
+               Grid.Column="2"
+               Width="120"
+               Height="120"
+
+               Source="{Binding CurrentWord.ImagePath, Converter={StaticResource StringToImageConverter}}"
+               />
+
+    </Grid>
+</Page>
